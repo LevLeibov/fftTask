@@ -153,7 +153,7 @@ print("NMSE of signal with error = ", nmse, "\n")
 print("Signal avg value = ", signalAvg, "\n")
 print("RESULTS: The 1st level acts like the most sensitive to noised multiplications. However the definition of levels is important in this analysis")
 
-# Compare fft results for different values of standard deviation (sigma) used in Gaussian distribution
+# Compare fft results for different values of standard deviation (sigma) used in Gaussian distribution of error
 stdCoefs = [0.001 * signalAvg, 0.5 * signalAvg, 1 * signalAvg, 5 * signalAvg, 10 * signalAvg]
 for c in stdCoefs:
     result = compareWithDiffLayers(c)
@@ -162,9 +162,9 @@ for c in stdCoefs:
     plt.plot(layers, nmse_vals, '-o', linestyle='dashed', linewidth=0.5)
     plt.legend(['sigma = 0.001*signalAvg', 'sigma = 0.5*signalAvg', 'sigma = 1*signalAvg', 'sigma = 5*signalAvg', 'sigma = 10*signalAvg'])
     plt.xticks([1, 2, 3, 4, 5])
-    plt.title("Dependence NSME on layer")
+    plt.title("Dependence NMSE on layer")
     plt.xlabel("Layer")
-    plt.ylabel("NSME")
+    plt.ylabel("NMSE")
 plt.show()
 
 # RESULTS:
